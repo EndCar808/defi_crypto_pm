@@ -4,4 +4,4 @@ numpy
 requests
 websocket-client
 eth-account
-hyperliquid
+hyperliquid-python-sdk

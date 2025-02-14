@@ -30,12 +30,12 @@ class NumeraiTBNOracle(OracleInterface):
     def __init__(self, tb=3):
         self.api = CryptoAPI()
         self.api.download_dataset(
-        	"crypto/v1.0/historical_meta_models.csv",
-        	"historical_meta_models.csv"
+        	"crypto/v1.0/historical_meta_models.parquet",
+        	"historical_meta_models.parquet"
         )
         
         #load historical MM
-        self.mm = pd.read_csv('historical_meta_models.csv')
+        self.mm = pd.read_parquet('historical_meta_models.parquet')
         self.mm['date'] = pd.to_datetime( self.mm['date'] )
 
         self.tb = tb
